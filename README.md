@@ -1,4 +1,4 @@
-# sql
-SELECT author, title, *// ИЗВЛЕЧЬ АВТОРА, НАЗВАНИЕ И НОВУЮ ЦЕНУ
-ROUND(IF(author='Булгаков М.А.',price+(price/100*10),IF(author='Есенин С.А.',price+(price/100*5),price)),2) AS new_price *// ЕСЛИ АВТОР - бУЛГАКОВ, ТО К ЦЕНЕ ПРИБАВИТЬ 10%, ЕСЛИ ЕСЕНИН - ПРИБАВИТЬ 5%, В ОСТАЛЬНЫХ СЛУЧАЯХ ЦЕНУ ОСТАВИТЬ ПРЕЖНЕЙ. ПОЛУЧЕННЫЕ СУММЫ ОКРГУЛИТЬ ДО ДВУХ ЦИФР ПОСЛЕ ЗАПЯТОЙ (ДО СОТЫХ).
-FROM book; *// ИЗ ТАБЛИЦЫ ПОД НАЗВАНИЕ "КНИГА"
+# SQL
+SELECT author, title, 
+ROUND(IF(author='Булгаков М.А.',price+(price/100*10),IF(author='Есенин С.А.',price+(price/100*5),price)),2) AS new_price 
+FROM book; 
