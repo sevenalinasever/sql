@@ -5,4 +5,4 @@ FROM book;
 
 SELECT author, title, price *// извлечь автора, название и цену книг, количество которых не превышает 10
 FROM book
-WHERE amount<10;
+WHERE amount<10; *// where - оператор условия, записывается после FROM book
