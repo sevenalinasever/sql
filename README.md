@@ -33,3 +33,7 @@ FROM book; =
 SELECT DISTINCT amount 
 FROM book
 GROUP BY amount;
+
+SELECT author AS "Автор",COUNT(amount) AS "Различных_книг", SUM(amount) AS "Количество_экземпляров"
+FROM book
+GROUP BY author; *//Посчитать, количество различных книг и количество экземпляров книг каждого автора , хранящихся на складе.  Столбцы назвать Автор, Различных_книг и Количество_экземпляров соответственно.
