@@ -89,3 +89,12 @@ WHERE price <= (
     SELECT MIN(price)+150
 FROM book)
 ORDER BY price ASC;*//Вывести информацию (автора, название и цену) о тех книгах, цены которых превышают минимальную цену книги на складе не более чем на 150 рублей в отсортированном по возрастанию цены виде.
+
+SELECT author, title, amount
+FROM book
+WHERE amount IN(
+    SELECT amount 
+FROM book
+GROUP BY amount
+HAVING COUNT(amount) = 1
+);*//Вывести информацию (автора, книгу и количество) о тех книгах, количество экземпляров которых в таблице book не дублируется.
