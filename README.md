@@ -98,3 +98,11 @@ FROM book
 GROUP BY amount
 HAVING COUNT(amount) = 1
 );*//Вывести информацию (автора, книгу и количество) о тех книгах, количество экземпляров которых в таблице book не дублируется.
+
+SELECT author, title, price
+FROM book
+WHERE price < ANY(
+    SELECT MIN(price)
+    FROM book
+    GROUP BY author
+);*//Вывести информацию о книгах(автор, название, цена), цена которых меньше самой большой из минимальных цен, вычисленных для каждого автора.
